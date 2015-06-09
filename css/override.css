@@ -26,8 +26,32 @@ body, html {
     background: #F8F8F8;
 }
 
+*:focus {
+    outline: 0;
+}
+
 ::selection { background: #DDD; color: inherit; }
 mark, .mark { background: #DDD; color: #000; }
+
+
+
+.btn {
+    text-transform: uppercase;
+    border: 0;
+    padding: 6px 24px;
+    transition: background-color 0.5s ease;
+}
+
+.btn-lg {
+    border-radius: 3px;
+    padding: 9px 45px;
+}
+
+.btn-md {
+    padding: 6px 24px;
+    border-radius: 2px;
+}
+
 
 
 .card {
@@ -54,6 +78,13 @@ mark, .mark { background: #DDD; color: #000; }
         color: #888;
         padding: 5px 0px;
     }
+
+
+.carousel-caption {
+    height: 50%;
+    bottom: 0px;
+    padding-bottom: 55px;
+}
 
 
 .header-logo {
@@ -102,7 +133,8 @@ mark, .mark { background: #DDD; color: #000; }
         width: 5%;
         min-width: 40px;
         max-width: 100px;
-        background: rgba(0,0,0,0.05);
+        background: none;
+        z-index: 1001;
     }
 
 .hero-content {
@@ -114,7 +146,7 @@ mark, .mark { background: #DDD; color: #000; }
     position: absolute;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 50%;
 }
 
 
