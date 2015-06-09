@@ -1,0 +1,18 @@
+# Site Settings
+title: edinsolar.org
+email: webmaster@edinsolar.org
+description: "Edinsolar - University of Edinburgh Solar Car Project"
+baseurl: ""
+url: "http://edinsolar.org"
+author: "Angus Pearson"
+
+# Main Navigation (Manual)
+navigation:
+ - text: Home
+   url: /
+
+# Build Settings
+paginate: 3
+paginate_path: "blog/page:num"
+markdown: kramdown
+permalink: pretty
