@@ -20,24 +20,54 @@ body, html {
     box-shadow: inset 0 0 6px rgba(255,255,255,0.5);
 }
 ::-webkit-scrollbar-thumb{
-    background: #FFF;
+    background: #F8F8F8;
 }
 ::-webkit-scrollbar-thumb:window-inactive {
-    background: #FFF;
+    background: #F8F8F8;
 }
 
 ::selection { background: #DDD; color: inherit; }
 mark, .mark { background: #DDD; color: #000; }
 
 
-img.header-logo {
-    width: 100%;
+.card {
+    margin-top: 20px;
+    -webkit-box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow:    0px 3px 2px 0px rgba(0, 0, 0, 0.2);
+    box-shadow:         0px 3px 2px 0px rgba(0, 0, 0, 0.2);
+    min-height: 80px;
+    background: #FFF;
+}
+
+    .card-content {
+        padding: 15px;
+        color: #555;
+        font-size: 12px;
+    }
+
+    .card-content h3 {
+        font-weight: normal;
+        color: #111;
+    }
+
+    .card-content aside {
+        color: #888;
+        padding: 5px 0px;
+    }
+
+
+.header-logo {
+    width: 50%;
+    max-width: 50%;
+    padding: 5% 0;
 }
 
 
 .hero {
     background-color: #000;
     background: url('../img/road-graded1.jpg');
+    background-position: center center;
+    background-size: cover;
     height: 100%;
 }
 
@@ -76,45 +106,29 @@ img.header-logo {
     }
 
 .hero-content {
+    position: absolute;
+    box-sizing: border-box;
     padding: 0px;
+    padding-top: 50px; /* avoid nav */
     text-align: center;
-    position: relative;
-    top: -50%;
-    width: 40%;
-    left: 50%;
-    margin-left: -20%;
-    margin-top: -12.5%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }
-
-    /* Screen MD */
-    @media(max-width: 991px){
-        .hero-content {
-	    width: 60%;
-            margin-left: -30%;
-            margin-top: -20%;
-	}
-    }
-
-    /* Screen XS */
-    @media (max-width: 480px) {
-	.hero-content {
-	    width: 85%;
-            margin-left: -42.5%;
-            margin-top: -37.5%;
-	}
-    }
-
 
 
 .navbar-es {
-    width: auto;
-    margin: 0px auto;
+    display: inline-block;
     border: 0;
-    background: rgba(255,255,255,0.05);
+}
+
+.nav-justified.navbar-nav>li {
+    float: none;
 }
 
 
-.site-nav {
+#site-nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -123,58 +137,105 @@ img.header-logo {
     width: 100%;
     margin-bottom: -60px;
     font-size: 16px;
+    text-align: center;
+    background: rgba(255,255,255,0.1);
+    color: #FFF;
+    transition: color 0.5s ease;
 }
 
-    .site-nav .nav>li>a {
-        color: #FFF;
+    #site-nav .nav>li>a {
+        color: inherit;
         text-transform: uppercase;
-    }
-
-    .site-nav .nav>li.active>a {
-        color: #FFF;
+        padding: 15px 40px;
         padding-bottom: 12px;
-        border-bottom: 3px solid rgba(255,255,255,0.3);
+        border-bottom: 3px solid rgba(255,255,255,0.2);
+        
     }
 
-    .site-nav .nav>li>a:hover,
-    .site-nav .nav>li>a.active:hover {
+    #site-nav .nav>li.active>a {
+        color: inherit;
+        padding-bottom: 12px;
+        border-bottom: 3px solid rgba(255,255,255,0.4);
+    }
+
+    #site-nav .nav>li>a:hover,
+    #site-nav .nav>li>a:focus,
+    #site-nav .nav>li>a.active:focus,
+    #site-nav .nav>li>a.active:hover {
         background: none;
+        outline: none;
         padding-bottom: 12px;
-        border-bottom: 3px solid rgba(255,255,255,0.3);
+        border-bottom: 3px solid rgba(255,255,255,0.5);
     }
 
-    .site-nav .nav>li.open>a {
-        background: rgba(255,255,255,0.2);
+    #site-nav .nav>li.open>a {
+        background: rgba(255,255,255,0.3);
+        border-color: rgba(255,255,255,0.5);
     }
 
-    .site-nav .navbar-toggle {
+    #site-nav .navbar-toggle {
         background: none;
         border: 0;
         border-radius: 2px;
     }
 
-    .site-nav .navbar-toggle>.icon-bar {
+    #site-nav .navbar-toggle>.icon-bar {
         background: #333;
     }
 
+
+    /* Screen SM */
     @media (max-width: 768px){
+        #site-nav {
+            text-align: left;
+        }
+        
         .navbar-es {
             background: #FFF;
             background: rgba(255,255,255,0.9);
             color: #333;
+            display: block;
         }
 
-        .site-nav .nav>li>a,
-        .site-nav .nav>li.active>a {
+        #site-nav .nav>li>a,
+        #site-nav .nav>li.active>a {
             color: #333;
+            padding: 12px;
         }
 
-        .site-nav .nav>li.active>a,
-        .site-nav .nav>li>a:hover,
-        .site-nav .nav>li>a.active:hover {
+        #site-nav .nav>li.active>a,
+        #site-nav .nav>li>a:hover,
+        #site-nav .nav>li>a.active:hover {
             border-bottom: none;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
             background: #EEE;
-            background: rgba(0,0,0,0.05);
+            background: rgba(0,0,0,0.1);
         }
+    }
+
+    
+    /** Transition for below-hero: **/
+    #site-nav.woosh {
+        background: #FFF;
+        color: #000;
+    }
+
+    #site-nav.woosh .nav>li>a {
+        border-bottom: 3px solid rgba(0,0,0,0.05);
+    }
+
+    #site-nav.woosh .nav>li.active>a {
+        border-bottom: 3px solid rgba(0,0,0,0.1);
+    }
+    
+    #site-nav.woosh .nav>li.open>a {
+        background: rgba(0,0,0,0.05);
+        border-color: rgba(0,0,0,0.3);
+    }
+
+    #site-nav.woosh .nav>li>a:hover,
+    #site-nav.woosh .nav>li>a:focus,
+    #site-nav.woosh .nav>li>a.active:focus,
+    #site-nav.woosh .nav>li>a.active:hover {
+        border-bottom: 3px solid rgba(0,0,0,0.2);
     }
