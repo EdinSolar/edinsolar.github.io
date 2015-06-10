@@ -15,7 +15,11 @@
 
 var ausCenter = new google.maps.LatLng(-25.691038, 134.692383);
 
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
+
 function initialize() {
+    directionsDisplay = new google.maps.DirectionsRenderer();
     var mapOptions = {
         center: { lat: -25.691038, lng: 134.692383},
         zoom: 5,

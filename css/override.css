@@ -15,15 +15,15 @@ body, html {
     max-width: 10px;
 }
 ::-webkit-scrollbar-track {
-    background: #CCC;
+    background: #FFF;
     -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.5);
     box-shadow: inset 0 0 6px rgba(255,255,255,0.5);
 }
 ::-webkit-scrollbar-thumb{
-    background: #181818;
+    background: #CCC;
 }
 ::-webkit-scrollbar-thumb:window-inactive {
-    background: #181818;
+    background: #CCC;
 }
 
 *:focus {
@@ -72,6 +72,7 @@ mark, .mark { background: #DDD; color: #000; }
     box-shadow:         0px 3px 2px 0px rgba(0, 0, 0, 0.2);
     min-height: 80px;
     background: #FFF;
+    border-radius: 3px;
 }
 
     .card-content {
@@ -128,6 +129,11 @@ mark, .mark { background: #DDD; color: #000; }
     color: #888;
     color: rgba(0,0,0,0.5);
 }
+.colour-pale {
+    background: #B3D1FF;
+    color: #333;
+}
+
 
 
 .dropdown-menu {
@@ -258,13 +264,14 @@ h4.jumbo {
         color: inherit;
         text-transform: uppercase;
         padding: 10px 40px;
-        padding-bottom: 8px;
-        border-bottom: 2px solid rgba(255,255,255,0.2);
+        padding-bottom: 9px;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
         
     }
 
     #site-nav .nav>li.active>a {
         color: inherit;
+        padding-bottom: 8px;
         border-bottom: 2px solid rgba(255,255,255,0.4);
     }
 
@@ -274,6 +281,7 @@ h4.jumbo {
     #site-nav .nav>li>a.active:hover {
         background: none;
         outline: none;
+        padding-bottom: 8px;
         border-bottom: 2px solid rgba(255,255,255,0.5);
     }
 
@@ -350,13 +358,31 @@ h4.jumbo {
     }
 
 
-/* Hacky use of table properties to make a child 100% of parent height */
-.vertical-fill-container {
-    display: table !important;
+/***
+    SQUARE-GRID-SYSTEM
+    Columns are all the same height in each row
+***/
+@media (min-width: 768px) {
+    .srow { width: 100%; display: table; table-layout: fixed; }
+    .scol { display: table-cell; vertical-align: top; }
 }
-.vertical-fill {
-    display: table-cell;
-    vertical-align: top;
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
 }
 
 
@@ -378,7 +404,6 @@ aspect ratio  | padding-bottom value
 .rect {
     padding-bottom: 56.25%;
 }
-
 .square>div,
 .rect>div {
     position: absolute;
