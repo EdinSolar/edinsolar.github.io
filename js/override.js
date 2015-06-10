@@ -12,8 +12,12 @@
 
 
 /* Google Maps */
-
-var ausCenter = new google.maps.LatLng(-25.691038, 134.692383);
+var map;
+var nw_bound = new google.maps.LatLng(-12.023203, 129.968262);
+var se_bound = new google.maps.LatLng(-36.042437, 139.713135)
+var bounds = new google.maps.LatLngBounds();
+bounds.extend(nw_bound);
+bounds.extend(se_bound);
 
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
@@ -22,20 +26,38 @@ function initialize() {
     directionsDisplay = new google.maps.DirectionsRenderer();
     var mapOptions = {
         center: { lat: -25.691038, lng: 134.692383},
-        zoom: 5,
+        zoom: 12,
         disableDefaultUI: true,
         scrollwheel: false,
+        draggable: false,
+        disableDoubleClickZoom: true,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
-    
-    var marker = new google.maps.Marker({
-        position: ausCenter,
-        map: map,
-        title:"CenterOfAus",
-        animation: google.maps.Animation.DROP
-    });
-
-    marker.setMap(map);
+    map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+    directionsDisplay.setMap(map);
+    map.fitBounds(bounds);
 }
+
+function calcRoute() {
+  var start = "Darwin";
+  var end = "Adelaide";
+  var request = {
+      origin:start,
+      destination:end,
+      travelMode: google.maps.TravelMode.DRIVING
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+    }
+  });
+}
+
 google.maps.event.addDomListener(window, 'load', initialize);
+google.maps.event.addDomListener(window, 'load', calcRoute);
+
+google.maps.event.addDomListener(window, "resize", function() {
+    var center = map.getCenter();
+    google.maps.event.trigger(map, "resize");
+    map.fitBounds(bounds);
+});

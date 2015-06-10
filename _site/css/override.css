@@ -66,7 +66,7 @@ mark, .mark { background: #DDD; color: #000; }
 
 
 .card {
-    margin-top: 20px;
+    margin: 20px 0px;
     -webkit-box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.2);
     -moz-box-shadow:    0px 3px 2px 0px rgba(0, 0, 0, 0.2);
     box-shadow:         0px 3px 2px 0px rgba(0, 0, 0, 0.2);
@@ -123,14 +123,18 @@ mark, .mark { background: #DDD; color: #000; }
     background: #181818;
     color: #FFF;
 }
-.colour-light {
+.colour-glass {
     background: #FFF;
     background: rgba(255,255,255,0.8);
     color: #888;
     color: rgba(0,0,0,0.5);
 }
-.colour-pale {
+.colour-l-blue {
     background: #B3D1FF;
+    color: #333;
+}
+.colour-l-green {
+    background: #DFE9C9;
     color: #333;
 }
 
@@ -404,6 +408,7 @@ aspect ratio  | padding-bottom value
 .rect {
     padding-bottom: 56.25%;
 }
+
 .square>div,
 .rect>div {
     position: absolute;
