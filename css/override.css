@@ -20,10 +20,10 @@ body, html {
     box-shadow: inset 0 0 6px rgba(255,255,255,0.5);
 }
 ::-webkit-scrollbar-thumb{
-    background: #F8F8F8;
+    background: #181818;
 }
 ::-webkit-scrollbar-thumb:window-inactive {
-    background: #F8F8F8;
+    background: #181818;
 }
 
 *:focus {
@@ -45,12 +45,23 @@ mark, .mark { background: #DDD; color: #000; }
 .btn-lg {
     border-radius: 3px;
     padding: 9px 45px;
+    font-weight: normal;
 }
 
 .btn-md {
     padding: 6px 24px;
     border-radius: 2px;
 }
+
+.btn-dark {
+    background-color: #1F1D1D;
+    color: #FFF;
+}
+    .btn-dark:hover,
+    .btn-dark:focus {
+        background-color: #161414;
+        color: #FFF;
+    }
 
 
 
@@ -84,6 +95,43 @@ mark, .mark { background: #DDD; color: #000; }
     height: 50%;
     bottom: 0px;
     padding-bottom: 55px;
+}
+
+
+.colour-primary {
+    background: #b60011;
+    color: #FFF;
+}
+.colour-info {
+    background: #40c4ff;
+    color: #FFF;
+}
+.colour-success {
+    background: #00c853;
+    color: #FFF;
+}
+.colour-warning {
+    background: #ff9100;
+    color: #FFF;
+}
+.colour-danger {
+    background: #d84315;
+    color: #FFF;
+}
+.colour-dark {
+    background: #181818;
+    color: #FFF;
+}
+.colour-light {
+    background: #FFF;
+    background: rgba(255,255,255,0.8);
+    color: #888;
+    color: rgba(0,0,0,0.5);
+}
+
+
+.dropdown-menu {
+    border: 0;
 }
 
 
@@ -135,6 +183,7 @@ mark, .mark { background: #DDD; color: #000; }
         max-width: 100px;
         background: none;
         z-index: 1001;
+        text-shadow: none;
     }
 
 .hero-content {
@@ -150,9 +199,28 @@ mark, .mark { background: #DDD; color: #000; }
 }
 
 
+.jumbo {
+    text-transform: uppercase;
+    font-weight: 100;
+}
+h1.jumbo {
+    font-size: 60px;
+}
+h2.jumbo {
+    font-size: 50px;
+}
+h3.jumbo {
+    font-size: 40px;
+}
+h4.jumbo {
+    font-size: 25px;
+}
+
 .navbar-es {
     display: inline-block;
     border: 0;
+    min-height: 40px;
+    margin-bottom: 0;
 }
 
 .nav-justified.navbar-nav>li {
@@ -160,17 +228,28 @@ mark, .mark { background: #DDD; color: #000; }
 }
 
 
+.no-gutter {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+
+.padder {
+    padding: 30px;
+}
+
+
 #site-nav {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 100;
-    height: 50px;
+    height: 40px;
     width: 100%;
     margin-bottom: -60px;
     font-size: 16px;
     text-align: center;
-    background: rgba(255,255,255,0.1);
+    background: none;
     color: #FFF;
     transition: color 0.5s ease;
 }
@@ -178,16 +257,15 @@ mark, .mark { background: #DDD; color: #000; }
     #site-nav .nav>li>a {
         color: inherit;
         text-transform: uppercase;
-        padding: 15px 40px;
-        padding-bottom: 12px;
-        border-bottom: 3px solid rgba(255,255,255,0.2);
+        padding: 10px 40px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid rgba(255,255,255,0.2);
         
     }
 
     #site-nav .nav>li.active>a {
         color: inherit;
-        padding-bottom: 12px;
-        border-bottom: 3px solid rgba(255,255,255,0.4);
+        border-bottom: 2px solid rgba(255,255,255,0.4);
     }
 
     #site-nav .nav>li>a:hover,
@@ -196,8 +274,7 @@ mark, .mark { background: #DDD; color: #000; }
     #site-nav .nav>li>a.active:hover {
         background: none;
         outline: none;
-        padding-bottom: 12px;
-        border-bottom: 3px solid rgba(255,255,255,0.5);
+        border-bottom: 2px solid rgba(255,255,255,0.5);
     }
 
     #site-nav .nav>li.open>a {
@@ -233,13 +310,13 @@ mark, .mark { background: #DDD; color: #000; }
         #site-nav .nav>li.active>a {
             color: #333;
             padding: 12px;
+            margin-bottom: 0px;
         }
 
         #site-nav .nav>li.active>a,
         #site-nav .nav>li>a:hover,
         #site-nav .nav>li>a.active:hover {
-            border-bottom: none;
-            padding-bottom: 15px;
+            padding-bottom: 12px;
             background: #EEE;
             background: rgba(0,0,0,0.1);
         }
@@ -271,3 +348,39 @@ mark, .mark { background: #DDD; color: #000; }
     #site-nav.woosh .nav>li>a.active:hover {
         border-bottom: 3px solid rgba(0,0,0,0.2);
     }
+
+
+/* Hacky use of table properties to make a child 100% of parent height */
+.vertical-fill-container {
+    display: table !important;
+}
+.vertical-fill {
+    display: table-cell;
+    vertical-align: top;
+}
+
+
+/**
+aspect ratio  | padding-bottom value
+--------------|----------------------
+    16:9      |       56.25%
+    4:3       |       75%
+    3:2       |       66.66%
+    8:5       |       62.5%
+**/
+.square,
+.rect {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+}
+
+.rect {
+    padding-bottom: 56.25%;
+}
+
+.square>div,
+.rect>div {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+}
