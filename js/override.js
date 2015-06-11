@@ -1,14 +1,12 @@
-/** Alter #site-nav classes based on vertical scroll position **/
 
-/*$(document).ready(function() {
-	$(window).scroll(function() {
-		if($(this).scrollTop() > ($('.hero').height() - 50)){
-			$('#site-nav').addClass('woosh');
-		} else {
-			$('#site-nav').removeClass('woosh');
-		}
-	});
-});*/
+/* Smoot scroll to name anchors */
+$('a').click(function(){
+	$('html, body').animate({
+		scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
+	}, 500);
+	return false;
+});
+
 
 
 /* Google Maps */
