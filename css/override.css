@@ -51,6 +51,10 @@ mark, .mark { background: #DDD; color: #000; }
     transition: background-color 0.5s ease;
 }
 
+.btn.stack {
+    margin-top: 5px;
+}
+
 .btn-lg {
     border-radius: 3px;
     padding: 9px 45px;
@@ -70,6 +74,16 @@ mark, .mark { background: #DDD; color: #000; }
     .btn-dark:focus {
         background-color: #161414;
         color: #FFF;
+    }
+
+.btn-glass {
+    background-color: rgba(255,255,255,0.3);
+    color: #333;
+}
+    .btn-glass:hover,
+    .btn-glass:focus {
+        background-color: rgba(255,255,255,0.4);
+        color: #222;
     }
 
 
@@ -238,6 +252,16 @@ mark, .mark { background: #DDD; color: #000; }
         background: none;
         z-index: 1001;
         text-shadow: none;
+        opacity: 0.7;
+    }
+
+    #carousel-hero .carousel-control:hover {
+        opacity: 1;
+    }
+
+    #carousel-hero .carousel-control .glyphicon-chevron-right,
+    #carousel-hero .carousel-control .glyphicon-chevron-left {
+        font-size: 20px;
     }
 
 .hero-content {
@@ -317,7 +341,7 @@ h4.jumbo {
     height: 40px;
     width: 100%;
     margin-bottom: -60px;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     background: none;
     color: #FFF;
