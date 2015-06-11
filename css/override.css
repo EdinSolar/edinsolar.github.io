@@ -61,9 +61,18 @@ mark, .mark { background: #DDD; color: #000; }
     font-weight: normal;
 }
 
+/* (default) */
 .btn-md {
     padding: 6px 24px;
     border-radius: 2px;
+}
+
+.btn-sm {
+    padding: 4px 20px;
+}
+
+.btn-xs {
+    padding: 2px 20px;
 }
 
 .btn-dark {
@@ -95,8 +104,22 @@ mark, .mark { background: #DDD; color: #000; }
     box-shadow:         0px 3px 2px 0px rgba(0, 0, 0, 0.2);
     min-height: 80px;
     background: #FFF;
+    color: #333;
     border-radius: 3px;
 }
+
+    .card hr {
+        border-color: #DDD;
+    }
+
+    .card .card-follow {
+        margin-top: 15px;
+    }
+
+    .card>img {
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
 
     .card-content {
         padding: 15px;
@@ -262,6 +285,16 @@ mark, .mark { background: #DDD; color: #000; }
     #carousel-hero .carousel-control .glyphicon-chevron-right,
     #carousel-hero .carousel-control .glyphicon-chevron-left {
         font-size: 20px;
+    }
+
+footer {
+    background: #EEE;
+    color: #666;
+}
+
+    footer>.container {
+        padding: 40px 15px;
+        border-top: 3px solid #DDD;
     }
 
 .hero-content {
