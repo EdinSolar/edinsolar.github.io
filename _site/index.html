@@ -1,64 +1,75 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>edinsolar.org - Home</title>
+    <title>Home - edinsolar.org</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <meta name="theme-color" content="#111">
+    <meta name="theme-color" content="#FFF">
     
     <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,100,200|Roboto+Slab:400,100,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/override.css">
     
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
     <script type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5BYVE3oKEViAlgFojqSF0knELehn-CLM">
     </script>
-    <script type="text/javascript" src="../js/override.js"></script>
+    <script type="text/javascript" src="/js/override.js"></script>
   </head>
 
 <body>
-  
+
   <div id="site-nav">
-  <nav class="navbar navbar-es">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-nav">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
+    <nav class="navbar navbar-es">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
 
-      <div class="collapse navbar-collapse" id="header-nav">
+      <a href="/">
+        <img alt="Edinsolar" src="/img/edinsolar-sm.png" class="navbar-logo">
+      </a>
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-nav">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="header-nav">
+      
+      <ul class="nav nav-justified navbar-nav">
         
-        <ul class="nav nav-justified navbar-nav">
-          <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#">Team</a></li>
-          <li><a href="#">Blog</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
-        </ul>
+        
+	
+        
+        
+	<li  class="active">
+	  <a href="/" title="Home" data-url="" data-link="">Home</a>
+	</li>
+	
+        
+        
+	<li >
+	  <a href="/team" title="Team" data-url="" data-link="team">Team</a>
+	</li>
+	
+        
+        
+	<li >
+	  <a href="/news" title="News" data-url="" data-link="news">News</a>
+	</li>
+	
+        
+      </ul>
 
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container -->
-  </nav>
-</div><!-- /.site-nav -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>
 
+  </div>
 
   <div class="hero">
 
@@ -93,19 +104,10 @@
             <h1>Tough engineering for the future</h1>
             <h3>Follow our development here</h3>
             <br>
-            <button class="btn btn-primary btn-sm">Blog</button>
+            <a href="/news" class="btn btn-primary btn-sm">News</a>
           </div>
         </div>
       </div>
-
-      <!--div class="item">
-          <img src="/img/road2.jpg" style="background-image: url('/img/road2.jpg');" alt="A curving mountain and crash barrier road at sunset">
-      </div>
-
-      <div class="item">
-          <img src="/img/road3.jpg" style="background-image: url('/img/road3.jpg');" alt="A curving highway with two wind turbines in the background">
-      </div-->
-
 
       <!-- Controls -->
       <!--a class="left carousel-control" href="#carousel-hero" role="button" data-slide="prev">
@@ -144,7 +146,7 @@
   <div class="row colour-l-blue">
     
     <div class="col-sm-12 col-md-7 col-lg-8">
-      <div class="rect"><!-- ######################## TODO: Make square on responsive resize-->
+      <div class="rect">
         <div id="map-canvas"></div>
       </div>
     </div>
@@ -175,59 +177,61 @@
   <div class="container">
 
     <h1 class="jumbo text-center">Latest News</h1>
-    <div class="text-center">
-      <a href="#" class="btn btn-glass btn-xs">More news &raquo;</a>
-    </div>
 
     <div class="row">
+
       
-      <div class="col-sm-6 col-md-4">
-        <div class="card">
-          <img src="/img/render1.jpg" class="img-responsive">
-          <div class="padder">
-            <a href="#"><h3>News article</h3></a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus 
-              vulputate efficitur. Sed placerat lorem ut erat lacinia viverra. Aenean mi 
-              nisl, dictum vel metus vitae, ullamcorper gravida est. Etiam congue, quam 
-              at sodales auctor, felis tellus pellentesque ligula, quis gravida urna 
-              neque sit amet ante. </p>
-            <a href="#" class="btn btn-sm btn-info card-follow">Read more &raquo;</a>
-          </div>
-        </div>
-      </div>
-      
+
+
       <div class="col-sm-6 col-md-4">
         <div class="card">
           <img src="/img/render2.jpg" class="img-responsive">
           <div class="padder">
-            <h3>News article</h3>
-            <p>Aenean facilisis risus ut risus laoreet, at feugiat quam sagittis. Integer 
-              mollis dui vitae iaculis auctor. Cras a felis non libero tincidunt vulputate 
-              vel ut velit. Mauris et eleifend felis. Cras facilisis diam mi, id interdum 
-              arcu vestibulum pellentesque. Integer eu tortor eu erat tincidunt facilisis 
-              eget vestibulum ligula. Pellentesque odio nisi, ultrices at rhoncus et, 
-              tristique vitae sapien.</p>
-            <a href="#" class="btn btn-sm btn-info card-follow">Read more &raquo;</a>
+            <a href="/2015/06/20/Design/"><h3>Design</h3></a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id enim nisl. Sed sed venenatis tellus. Nunc lobortis lectus velit, nec congue massa aliquam ut. Mauris id interdum sem. Suspendisse non lorem convallis, consectetur ipsum in, tincidunt tellus. Donec ante tortor, tempor quis fringilla quis, pharetra ut elit. Mauris bibendum sed urna eu vestibulum. Etiam id sem sed mi dignissim ultricies. Integer euismod, tellus eget laoreet laoreet, risus mi commodo quam, sed sagittis velit eros...</p>
+            <a href="/2015/06/20/Design/" class="btn btn-sm btn-info card-follow">Read more &raquo;</a>
           </div>
         </div>
       </div>
 
-      <div class="visible-sm col-sm-3"></div>
+
+      
+
 
       <div class="col-sm-6 col-md-4">
         <div class="card">
-          <img src="/img/render3.jpg" class="img-responsive">
+          <img src="/img/aero.jpg" class="img-responsive">
           <div class="padder">
-            <h3>News article</h3>
-            <p>Nam ac velit sit amet lectus pretium luctus. Curabitur tempor magna eu lorem 
-              consequat dignissim. Nullam malesuada cursus massa quis pretium. Donec 
-              pellentesque dictum purus sit amet pretium. </p>
-            <a href="#" class="btn btn-sm btn-info card-follow">Read more &raquo;</a>
+            <a href="/2015/06/12/Aerodynamic-Modelling/"><h3>Aerodynamic Modelling</h3></a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id enim nisl. Sed sed venenatis tellus. Nunc lobortis lectus velit, nec congue massa aliquam ut. Mauris id interdum sem. Suspendisse non lorem convallis, consectetur ipsum in, tincidunt tellus. Donec ante tortor, tempor quis fringilla quis, pharetra ut elit. Mauris bibendum sed urna eu vestibulum. Etiam id sem sed mi dignissim ultricies. Integer euismod, tellus eget laoreet laoreet, risus mi commodo quam, sed sagittis velit eros...</p>
+            <a href="/2015/06/12/Aerodynamic-Modelling/" class="btn btn-sm btn-info card-follow">Read more &raquo;</a>
           </div>
         </div>
       </div>
 
+
+      
+
+
+      <div class="col-sm-6 col-md-4">
+        <div class="card">
+          <img src="/img/team.jpg" class="img-responsive">
+          <div class="padder">
+            <a href="/2014/06/25/Hello-World/"><h3>Hello World</h3></a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id enim nisl. Sed sed venenatis tellus. Nunc lobortis lectus velit, nec congue massa aliquam ut. Mauris id interdum sem. Suspendisse non lorem convallis, consectetur ipsum in, tincidunt tellus. Donec ante tortor, tempor quis fringilla quis, pharetra ut elit. Mauris bibendum sed urna eu vestibulum. Etiam id sem sed mi dignissim ultricies. Integer euismod, tellus eget laoreet laoreet, risus mi commodo quam, sed sagittis velit eros...</p>
+            <a href="/2014/06/25/Hello-World/" class="btn btn-sm btn-info card-follow">Read more &raquo;</a>
+          </div>
+        </div>
+      </div>
+
+
+      
+
     </div><!-- /.row -->
+
+    <div class="text-center padder">
+      <a href="/news" class="btn btn-glass btn-xs">More news &raquo;</a>
+    </div>
 
   </div>
 </div>

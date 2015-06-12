@@ -42,7 +42,13 @@ body, html {
 ::selection { background: #DDD; color: inherit; }
 mark, .mark { background: #DDD; color: #000; }
 
-
+a h1, a h2, a h3, a h4 {
+    color: #222;
+}
+a:hover,
+a:focus {
+    color: #111;
+}
 
 .btn {
     text-transform: uppercase;
@@ -197,11 +203,28 @@ mark, .mark { background: #DDD; color: #000; }
     background: #DFE9C9;
     color: #333;
 }
+.colour-dust {
+    background-image: url('../img/stardust.png');
+    background-position: center center;
+    background-repeat: repeat;
+}
 
 
+/* Keep full width stuff sensible */
 @media(min-width: 1200px){
     .container-lg {
         width: 1170px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* Same but for massive displays */
+@media(min-width: 1920px){
+    .container-xl {
+        width: 1920px;
         margin-right: auto;
         margin-left: auto;
         padding-left: 15px;
@@ -314,6 +337,10 @@ mark, .mark { background: #DDD; color: #000; }
 
 
 
+hr {
+    border-color: #AAA;
+}
+
 
 footer {
     background: #EEE;
@@ -402,9 +429,8 @@ h4.jumbo {
     top: 0;
     left: 0;
     z-index: 100;
-    height: 40px;
+    height: 48px;
     width: 100%;
-    margin-bottom: -60px;
     font-size: 14px;
     text-align: center;
     background: none;
@@ -447,7 +473,37 @@ h4.jumbo {
     }
 
     #site-nav .navbar-toggle>.icon-bar {
-        background: #111;
+        background: #FFF;
+    }
+
+    #site-nav .navbar-logo {
+        display: none;
+    }
+
+
+
+    /*** CONDENSED PAGES ***/
+    #site-nav.condensed {
+        position: relative;
+        background: #181818;
+    }
+
+    #site-nav.condensed .navbar-logo {
+        display: inline-block;
+        height: 40px;
+        width: 208px;
+        border-top: 2px solid rgba(255,255,255,0.3);
+        padding: 12px 14px;
+        padding-bottom: 14px;
+    }
+
+    #site-nav.condensed .navbar-logo:hover {
+        border-top: 2px solid rgba(255,255,255,0.7);
+    }
+
+    #site-nav.condensed .navbar-collapse {
+        margin-left: 208px;
+        padding-left: 0;
     }
 
 
@@ -456,12 +512,26 @@ h4.jumbo {
     @media (max-width: 767px){
         #site-nav {
             text-align: left;
+            background: #181818;
         }
         
         .navbar-es {
             color: #333;
             display: block;
-            background: #FFF;
+        }
+
+        #site-nav.condensed .navbar-logo {
+            border-top: none;
+            padding: 18px 14px;
+            width: auto;
+            height: 48px;
+        }
+
+        #site-nav.condensed .navbar-logo:hover { border: 0; }
+
+        #site-nav.condensed .navbar-collapse {
+            margin-left: -15px;
+            padding-left: 14px;
         }
 
         #site-nav .nav>li>a,
@@ -490,7 +560,6 @@ h4.jumbo {
         #site-nav .navbar-collapse.in,
         #site-nav .navbar-collapse.collapsing {
             background: #FFF;
-            background: rgba(255,255,255,0.9);
         }
     }
 

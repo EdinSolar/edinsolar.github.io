@@ -1,0 +1,63 @@
+---
+layout: condensed
+title: News
+---
+
+
+<div class="colour-dark padder">
+  <div class="container text-center">
+    <h1 class="jumbo">Latest News</h1>
+  </div>
+</div>
+
+
+
+<div class="container-fluid container-xl">
+  {% for post in paginator.posts %}
+  
+  <div class="row">
+    <div class="col-sm-5 no-gutter colour-dark">
+      <img src="{{ site.baseurl }}/img/{{ post.image }}" class="img-responsive">
+    </div>
+
+    <div class="col-sm-7">
+      <div class="padder">
+        <a href="{{ post.url | prepend: site.baseurl }}">
+          <h1>{{ post.title | xmlescape }}</h1>
+        </a>
+        <br>
+        <span class="colour-glass">Published {{ post.date | date: "%b %-d, %Y" }}</span>
+        <br><br>
+        {{ post.content }}
+      </div>
+    </div>
+
+  </div>
+  {% endfor %}
+</div><!-- /.container-fluid -->
+
+
+
+{% if paginator.total_pages > 1 %}
+<div class="container">
+  <div class="padder">
+    
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="btn btn-info">
+      <span class="glyphicon glyphicon-chevron-left"></span> Older
+    </a>
+    {% else %}
+    <a class="btn btn-default" disabled="disabled"><span class="glyphicon glyphicon-chevron-left"></span> Older</a>
+    {% endif %}
+    
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="btn btn-info pull-right">
+        Newer <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+    {% else %}
+    <a class="btn btn-default btn-default pull-right" disabled="disabled">Newer <span class="glyphicon glyphicon-chevron-right"></span></a>
+    {% endif %}
+
+  </div>
+</div>
+{% endif %}
