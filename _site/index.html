@@ -4,12 +4,16 @@
     <title>Home - edinsolar.org</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <meta name="theme-color" content="#FFF">
+    <meta name="theme-color" content="#181818">
     
     <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,100,200|Roboto+Slab:400,100,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/override.css">
-    
+
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+    <link rel="apple-touch-icon icon" href="/img/icon.png">
+
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
     <script type="text/javascript"
@@ -19,6 +23,17 @@
   </head>
 
 <body>
+
+  <!-- Facebook SDK -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.2";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+  <!-- /facebook -->
 
   <div id="site-nav">
     <nav class="navbar navbar-es">
@@ -86,7 +101,7 @@
       
 
       <div class="item active">
-          <!--img src="/img/road-graded1.jpg" style="background-image: url('/img/road-graded1.jpg');" alt="A road in the outback."-->
+          <!--img src="/img/road-graded1-opt.jpg" style="background-image: url('/img/road-graded1.jpg');" alt="A road in the outback."-->
           <div class="carousel-caption">
             <div class="caption-bottom">
               <h1>3027 km to go</h1>
@@ -100,9 +115,10 @@
       </div>
     
       <div class="item">
+        <!--img src="/img/transport-opt.jpg" style="background-image: url('/img/transport-opt.jpg');" alt="London, showing a red bus."-->
         <div class="carousel-caption">
           <div class="caption-bottom">
-            <h1>Tough engineering for the future</h1>
+            <h1>Tough engineering for the future of transport</h1>
             <h3>Follow our development here</h3>
             <br>
             <a href="/news" class="btn btn-primary btn-sm">News</a>
@@ -239,45 +255,147 @@
 </div>
 
 
-<!-- TODO: Social cards -->
-<!--div class="colour">
+<div class="colour">
   <div class="container">
     
     <div class="row">
       
       <div class="col-sm-4">
         <div class="padder">
-          <h4>Facebook</h4>
+          <h4><i class="fa fa-facebook-official"></i>&nbsp; Facebook</h4>
+          <br>
+          
+          <p>Edinsolar racing is on <a href="https://www.facebook.com/edinsolarracing">Facebook.</a></p>
+
+          <div class="fb-like" 
+               data-href="https://www.facebook.com/edinsolarracing" 
+               data-layout="button_count" 
+               data-action="like" 
+               data-show-faces="true" 
+               data-share="true">
+          </div>
         </div>
       </div>
 
       <div class="col-sm-4">
         <div class="padder">
-          <h4>Twitter</h4>
-          <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">
-              Yo, I&#39;m still in my underwear. <a href="http://t.co/vwYdpVe2Lb">pic.twitter.com/vwYdpVe2Lb</a></p>
-            &mdash; Yo (@YoApp) <a href="https://twitter.com/YoApp/status/609088163546603520">June 11, 2015</a>
-          </blockquote>
-          <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <h4><i class="fa fa-twitter"></i>&nbsp; Twitter</h4>
+          <br>
+          
+          <p>Follow us on <a href="https://twitter.com/Edinsolar">Twitter</a> to stay up 
+            to date on our progress.</p>
+          
+          <a href="https://twitter.com/Edinsolar" class="twitter-follow-button" data-show-count="false">Follow @Edinsolar</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         </div>
       </div>
 
       <div class="col-sm-4">
         <div class="padder">
-          <h4>Newsletter</h4>
+          <h4><i class="fa fa-envelope"></i>&nbsp; Newsletter</h4>
+          <br>
+          
+          <p>Sign up to receive occasional updates from the team.</p>
+          
+          <!-- Begin MailChimp Signup Form -->
+          <div id="mc_embed_signup">
+            <form action="//edinsolar.us11.list-manage.com/subscribe/post?u=f04c0353bbfcb61f2fb635b7d&amp;id=1e25e567c1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div id="mc_embed_signup_scroll">
+	        
+                
+	        <label for="mce-EMAIL" class="sr-only">Email Address</label>
+                <div class="mc-field-group input-group">
+	          <input type="email" value="" name="EMAIL" 
+                         class="required form-control" id="mce-EMAIL" placeholder="Email Address">
+                  
+                  <!-- real people should not fill this in and expect good things - 
+                     do not remove this or risk form bot signups-->
+                  <div style="position: absolute; left: -5000px;">
+                    <input type="text" name="b_f04c0353bbfcb61f2fb635b7d_1e25e567c1" tabindex="-1" value="">
+                  </div>
+                  
+                  <span class="input-group-btn">
+                    <button type="submit" value="Subscribe" name="subscribe" 
+                            id="mc-embedded-subscribe" class="btn btn-info">
+                      <span class="glyphicon glyphicon-ok"></span>
+                    </button>
+                  </span>
+                </div>
+	        <div id="mce-responses" class="clearfix">
+		  <div class="response" id="mce-error-response" style="display:none"></div>
+		  <div class="response" id="mce-success-response" style="display:none"></div>
+	        </div>
+              </div>
+            </form>
+          </div>
+          <!--End mc_embed_signup-->
+          
+          
         </div>
       </div>
 
     </div>
 
   </div>
-</div-->
+</div>
 
 
   
   <footer>
   <div class="container">
-    Hello!
+
+    <div class="row">
+      
+      <div class="col-sm-4">
+        <div class="padder">
+          <h4>Media</h4>
+
+          <i class="fa fa-facebook-official"></i>&nbsp; <a href="https://www.facebook.com/edinsolarracing" target=_blank>Facebook</a><br>
+          <i class="fa fa-twitter"></i>&nbsp; <a href="https://twitter.com/Edinsolar" target=_blank>Twitter</a><br>
+          <i class="fa fa-github"></i>&nbsp; <a href="https://github.com/EdinSolar" target=_blank>GitHub</a><br>
+          <i class="fa fa-envelope"></i>&nbsp; <a href="http://eepurl.com/bqnbLv" target=_blank>Mailing List</a><br>
+          
+          <hr>
+          <p>Hosted on <i class="fa fa-github"></i> GitHub Pages</p>
+        </div>
+      </div>
+
+
+
+      <div class="col-sm-4">
+        <div class="padder">
+          <h4>Contact</h4>
+          <em>For general enquiries:</em><br>
+          <i class="fa fa-envelope"></i>&nbsp; Email <a href="mailto:contact@edinsolar.org">contact@edinsolar.org</a><br><br>
+
+          <em>For sponsorship details:</em><br>
+          <i class="fa fa-envelope"></i>&nbsp; Email <a href="mailto:sponsorship@edinsolar.org">sponsorship@edinsolar.org</a><br><br>
+
+          <em>Media &amp; press:</em><br>
+          <i class="fa fa-envelope"></i>&nbsp; Email <a href="mailto:media@edinsolar.org">media@edinsolar.org</a><br>  
+          
+        </div>
+      </div>
+      
+
+      <div class="col-sm-4">
+        <div class="padder">
+          <h4>Address</h4>
+
+          <i class="fa fa-map-marker"></i><br>
+          <p>
+            Edinsolar<br>
+            The University of Edinburgh<br>
+            Faraday Building, King's Buildings<br>
+            Colin Maclaurin Road<br>
+            Edinburgh<br>
+            EH9 3DW<br>
+          </p>
+        </div>
+      </div>
+      
+    </div><!-- /.row -->
+    
   </div>
 </footer>
 

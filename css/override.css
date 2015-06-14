@@ -8,7 +8,9 @@ body, html {
     height: 100%;
     min-width: 320px;
     min-height: 680px;
+    background: #FFF;
 }
+
 
 @media (max-width: 767px){
     /* Hide the scrollbar on devices that are *probaby* touch */
@@ -158,7 +160,7 @@ a:focus {
 
 
 .carousel-caption {
-    height: 50%;
+    height: 40%;
     bottom: 0px;
     padding-bottom: 55px;
     text-shadow: rgba(0, 0, 0, 0.9) 0px 2px 3px;
@@ -238,6 +240,21 @@ a:focus {
 }
 
 
+footer {
+    background: #EEE;
+    color: #333;
+}
+
+    footer p {
+        color: #666;
+    }
+
+    footer>.container,
+    footer>.container-fluid {
+        border-top: 3px solid #b60011;
+    }
+
+
 .header-logo {
     width: 90%;
     max-width: 90%;
@@ -263,15 +280,15 @@ a:focus {
 .hero {
     background-color: #A0A0A0;
     /* https://unsplash.com/fresonneveld */
-    background: url('../img/road-graded1.jpg');
+    background: url('../img/road-graded1-opt.jpg');
     background-position: center center;
     background-size: cover;
     height: 100%;
-    min-height: 100vw;
+    min-height: 150vw;
 }
 
     @media( min-width: 768px ){
-        .hero { min-height: 66vw; }
+        .hero { min-height: 70vw; }
     }
 
     @media( min-width: 992px ){
@@ -335,23 +352,6 @@ a:focus {
         font-size: 20px;
     }
 
-
-
-hr {
-    border-color: #AAA;
-}
-
-
-footer {
-    background: #EEE;
-    color: #666;
-}
-
-    footer>.container {
-        padding: 40px 15px;
-        border-top: 3px solid #b60011;
-    }
-
 .hero-content {
     position: absolute;
     box-sizing: border-box;
@@ -362,6 +362,29 @@ footer {
     top: 0;
     width: 100%;
     overflow: hidden;
+}
+
+hr {
+    border-color: #AAA;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    border-radius: 3px;
+    border: 0;
+    background-color: #FAFAFA;
+    -webkit-box-shadow: inset 0px 0px 8px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: inset 0px 0px 8px 0px rgba(0,0,0,0.1);
+    box-shadow: inset 0px 0px 8px 0px rgba(0,0,0,0.1);
+    color: #555;
+}
+
+.input-group-btn:last-child>.btn, 
+.input-group-btn:last-child>.btn-group {
+    margin-left: 0px;
+    padding: 7px 12px;
 }
 
 
@@ -398,6 +421,7 @@ h4.jumbo {
     }
 }
 
+
 .navbar-es {
     display: inline-block;
     border: 0;
@@ -429,11 +453,11 @@ h4.jumbo {
     top: 0;
     left: 0;
     z-index: 100;
-    height: 48px;
+    height: 40px;
     width: 100%;
     font-size: 14px;
     text-align: center;
-    background: none;
+    background: rgba(0,0,0,0.1);
     color: #FFF;
     transition: color 0.5s ease;
 }
@@ -443,14 +467,13 @@ h4.jumbo {
         text-transform: uppercase;
         padding: 10px 40px;
         padding-top: 8px;
-        border-top: 2px solid rgba(255,255,255,0.3);
-        
+        border-top: 2px solid rgba(255,255,255,0.5);
     }
 
     #site-nav .nav>li.active>a {
         color: inherit;
         padding-top: 8px;
-        border-top: 2px solid rgba(255,255,255,0.5);
+        border-top: 2px solid #FFF;
     }
 
     #site-nav .nav>li>a:hover,
@@ -459,12 +482,12 @@ h4.jumbo {
     #site-nav .nav>li>a.active:hover {
         background: none;
         outline: none;
-        border-top: 2px solid rgba(255,255,255,0.7);
+        border-top: 2px solid rgba(255,255,255,0.9);
     }
 
     #site-nav .nav>li.open>a {
-        background: rgba(255,255,255,0.1);
-        border-color: rgba(255,255,255,0.5);
+        background: rgba(255,255,255,0.2);
+        border-color: rgba(255,255,255,0.9);
     }
 
     #site-nav .navbar-toggle {
@@ -492,18 +515,19 @@ h4.jumbo {
         display: inline-block;
         height: 40px;
         width: 208px;
-        border-top: 2px solid rgba(255,255,255,0.3);
+        border-top: 2px solid rgba(255,255,255,0.5);
         padding: 12px 14px;
         padding-bottom: 14px;
     }
 
     #site-nav.condensed .navbar-logo:hover {
-        border-top: 2px solid rgba(255,255,255,0.7);
+        border-top: 2px solid rgba(255,255,255,0.9);
     }
 
     #site-nav.condensed .navbar-collapse {
         margin-left: 208px;
         padding-left: 0;
+        position: absolute;
     }
 
 
@@ -513,6 +537,7 @@ h4.jumbo {
         #site-nav {
             text-align: left;
             background: #181818;
+            height: 48px;
         }
         
         .navbar-es {
@@ -532,6 +557,7 @@ h4.jumbo {
         #site-nav.condensed .navbar-collapse {
             margin-left: -15px;
             padding-left: 14px;
+            position: relative;
         }
 
         #site-nav .nav>li>a,
