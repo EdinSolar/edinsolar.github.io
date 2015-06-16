@@ -44,12 +44,12 @@ body, html {
 ::selection { background: #DDD; color: inherit; }
 mark, .mark { background: #DDD; color: #000; }
 
-a h1, a h2, a h3, a h4 {
-    color: #222;
+a, a h1, a h2, a h3, a h4 {
+    color: inherit;
 }
 a:hover,
 a:focus {
-    color: #111;
+    color: inherit;
 }
 
 .btn {
@@ -241,8 +241,9 @@ a:focus {
 
 
 footer {
-    background: #EEE;
+    background: #FFF;
     color: #333;
+    border-top: 3px solid #b60011;
 }
 
     footer p {
@@ -251,7 +252,6 @@ footer {
 
     footer>.container,
     footer>.container-fluid {
-        border-top: 3px solid #b60011;
     }
 
 
@@ -278,7 +278,7 @@ footer {
 
 
 .hero {
-    background-color: #A0A0A0;
+    background-color: #181818;
     /* https://unsplash.com/fresonneveld */
     background: url('../img/road-graded1-opt.jpg');
     background-position: center center;
