@@ -123,7 +123,7 @@ title: Home
           <img src="{{ site.baseurl }}/img/{{ post.image }}" class="img-responsive">
           <div class="padder">
             <a href="{{ post.url | prepend: site.baseurl }}"><h3>{{ post.title | xmlescape }}</h3></a>
-            <p>{{ post.content | strip_html | truncatewords:75 }}</p>
+            <p>{{ post.content | strip_html | truncatewords:50 }}</p>
             <a href="{{ post.url | prepend: site.baseurl }}" class="btn btn-sm btn-info card-follow">Read more &raquo;</a>
           </div>
         </div>
@@ -144,7 +144,7 @@ title: Home
 
 
 
-<div class="colour-info">
+<div class="colour-shade">
   <div class="container">
     
     <div class="row">

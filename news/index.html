@@ -12,52 +12,100 @@ title: News
 
 
 
-<div class="container-fluid container-xl">
-  {% for post in paginator.posts %}
-  
-  <div class="row">
-    <div class="col-sm-5 no-gutter colour-dark">
-      <img src="{{ site.baseurl }}/img/{{ post.image }}" class="img-responsive">
-    </div>
+<div class="colour-shade">
+  <div class="container">
 
-    <div class="col-sm-7">
-      <div class="padder">
-        <a href="{{ post.url | prepend: site.baseurl }}">
-          <h1>{{ post.title | xmlescape }}</h1>
-        </a>
-        <br>
-        <span class="colour-glass">Published {{ post.date | date: "%b %-d, %Y" }}</span>
-        <br><br>
-        {{ post.content }}
+    <div class="row">
+
+      <!-- Begin MailChimp Signup Form -->
+      <div class="col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4 padder" id="mc_embed_signup">
+
+        <p class="text-center subtle">Sign up to our newsletter so you don't miss a thing</p>
+
+        <form action="//edinsolar.us11.list-manage.com/subscribe/post?u=f04c0353bbfcb61f2fb635b7d&amp;id=1e25e567c1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <div id="mc_embed_signup_scroll">
+	    
+            
+	    <label for="mce-EMAIL" class="sr-only">Email Address for Newsletter signup</label>
+            <div class="mc-field-group input-group">
+              <span class="input-group-btn">
+              <a href="{{ site.baseurl }}/feed.xml" class="btn btn-warning">
+                <i class="fa fa-rss fa-fw"></i></a>
+              </span>
+
+	      <input type="email" value="" name="EMAIL" 
+                     class="required form-control" id="mce-EMAIL" placeholder="Email Address">
+              
+              <!-- real people should not fill this in and expect good things - 
+                   do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;">
+                <input type="text" name="b_f04c0353bbfcb61f2fb635b7d_1e25e567c1" tabindex="-1" value="">
+              </div>
+              
+              <span class="input-group-btn">
+                <button type="submit" value="Subscribe" name="subscribe" 
+                        id="mc-embedded-subscribe" class="btn btn-info">
+                  <i class="fa fa-check fa-fw"></i>
+                </button>
+              </span>
+            </div>
+	    <div id="mce-responses" class="clearfix">
+	      <div class="response" id="mce-error-response" style="display:none"></div>
+	      <div class="response" id="mce-success-response" style="display:none"></div>
+	    </div>
+          </div>
+        </form>
+      </div>
+      <!--End mc_embed_signup-->
+
+    </div><!-- /.row -->
+
+
+
+    <div class="row">
+      <div class="grid">
+        <div class="grid-sizer"></div>
+        {% for post in paginator.posts %}
+        
+        <div class="grid-block">
+          <div class="card">
+            <img src="{{ site.baseurl }}/img/{{ post.image }}" class="img-responsive">
+            <div class="padder">
+              <a href="{{ post.url | prepend: site.baseurl }}"><h3>{{ post.title | xmlescape }}</h3></a>
+              <p>{{ post.content | strip_html | truncatewords:75 }}</p>
+              <a href="{{ post.url | prepend: site.baseurl }}" 
+                 class="btn btn-sm btn-info card-follow">Read more &raquo;</a>
+            </div>
+          </div>
+        </div>
+        
+        {% endfor %}
       </div>
     </div>
-
   </div>
-  {% endfor %}
-</div><!-- /.container-fluid -->
+</div><!-- /.row -->
 
 
-
-{% if paginator.total_pages > 1 %}
-<div class="container">
-  <div class="padder">
-    
-    {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="btn btn-info">
-      <span class="glyphicon glyphicon-chevron-left"></span> Older
-    </a>
-    {% else %}
-    <a class="btn btn-default" disabled="disabled"><span class="glyphicon glyphicon-chevron-left"></span> Older</a>
-    {% endif %}
-    
-    {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="btn btn-info pull-right">
+<div class="colour-dark">
+  <div class="container">
+    <div class="padder">
+      
+      {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="btn btn-info btn-sm">
+        <span class="glyphicon glyphicon-chevron-left"></span> Older
+      </a>
+      {% else %}
+      <a class="btn btn-default btn-sm" disabled="disabled"><span class="glyphicon glyphicon-chevron-left"></span> Older</a>
+      {% endif %}
+      
+      {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="btn btn-info btn-sm pull-right">
         Newer <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
-    {% else %}
-    <a class="btn btn-default btn-default pull-right" disabled="disabled">Newer <span class="glyphicon glyphicon-chevron-right"></span></a>
-    {% endif %}
+      </a>
+      {% else %}
+      <a class="btn btn-sm btn-default pull-right" disabled="disabled">Newer <span class="glyphicon glyphicon-chevron-right"></span></a>
+      {% endif %}
 
+    </div>
   </div>
 </div>
-{% endif %}

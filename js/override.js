@@ -17,6 +17,27 @@ $(function() {
 
 
 
+
+/* Masonry */
+
+$(document).ready( function() {
+
+    $('.grid').masonry({
+        itemSelector: '.grid-block',
+        columnWidth: '.grid-sizer',
+        percentPosition: true
+    }); 
+    
+});
+
+/* Re-do layout once all images are present: */
+imagesLoaded( '.grid', function() {
+    $('.grid').masonry('layout');
+});
+
+
+
+
 /* Google Maps */
 var map;
 var nw_bound = new google.maps.LatLng(-12.023203, 129.968262);
