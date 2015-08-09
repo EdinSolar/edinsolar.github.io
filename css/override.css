@@ -663,8 +663,6 @@ h4.jumbo {
     JS Auto-Tiling
 ***/
 
-.grid { margin-left: 15px; }
-
 .grid:after {
   content: '';
   display: block;
@@ -689,6 +687,8 @@ h4.jumbo {
 }
 
 @media( min-width: 768px ){
+    .grid { margin-left: 15px; }
+
     .grid-block,
     .grid-sizer {
         width: 50%;
