@@ -14,7 +14,8 @@ layout: condensed
           <h1>{{ page.title }}</h1>
         </a>
         <br>
-        <span class="colour-glass">Published {{ page.date | date: "%b %-d, %Y" }}</span>
+        <span class="colour-glass">Published {{ page.date | date: "%b %-d, %Y" }}
+          by {{ page.author | strip_html | truncatewords:5 }}</span>
         <br><br>
         {{ content }}
       </div>
