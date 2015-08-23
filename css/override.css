@@ -8,7 +8,7 @@ body, html {
     height: 100%;
     min-width: 320px;
     min-height: 680px;
-    background: #FFF;
+    background: #181818;
 }
 
 
@@ -189,6 +189,9 @@ a:focus {
     background: #d84315;
     color: #FFF;
 }
+.colour-light {
+    background: #FFF;
+}
 .colour-dark {
     background: #181818;
     color: #FFF;
@@ -241,6 +244,8 @@ a:focus {
     }
 }
 
+.container-skinny{ padding: 0; }
+
 
 .dropdown-menu {
     border: 0;
@@ -248,17 +253,13 @@ a:focus {
 
 
 footer {
-    background: #FFF;
-    color: #333;
-    border-top: 3px solid #b60011;
+    background: #181818;
+    color: #FFF;
+    border-top: 3px solid #484848;
 }
 
     footer p {
-        color: #666;
-    }
-
-    footer>.container,
-    footer>.container-fluid {
+        color: #CCC;
     }
 
 
@@ -416,6 +417,12 @@ h4.jumbo {
     font-size: 18px;
 }
 
+.jumbo a:hover,
+.jumbo a:focus {
+    text-decoration: none!important;
+    border-bottom: 2px solid #111;
+}
+
 /* Larger sizes for larger screens */
 @media (min-width: 992px) {
     h1.jumbo {
@@ -461,6 +468,38 @@ h4.jumbo {
 .padder-thin {
     padding: 10px 30px;
 }
+
+
+
+.post-banner {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    width: 100%;
+    padding-right: 100%;
+    min-height: 250px;
+    height: 300px;
+    height: 40vh;
+}
+
+
+.profile {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    display: inline;
+    float: left;
+    margin: 0px 20px 10px 0px;
+    background: #DDD;
+}
+
+    .profile.tiny {
+        width: 30px;
+        height: 30px;
+        margin: 0px 10px 0px 0px;
+    }
+
 
 
 #site-nav {
@@ -534,6 +573,7 @@ h4.jumbo {
     #site-nav.condensed {
         position: relative;
         background: #181818;
+        height: 40px;
     }
 
     #site-nav.condensed .navbar-logo {
@@ -559,7 +599,8 @@ h4.jumbo {
 
     /* Screen SM */
     @media (max-width: 767px){
-        #site-nav {
+        #site-nav,
+        #site-nav.condensed {
             text-align: left;
             background: #181818;
             height: 48px;
