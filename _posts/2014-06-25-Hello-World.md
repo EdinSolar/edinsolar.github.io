@@ -1,5 +1,6 @@
 ---
 title: Hello World
+author: Simon & Erin
 image: team.jpg
 layout: post
 ---

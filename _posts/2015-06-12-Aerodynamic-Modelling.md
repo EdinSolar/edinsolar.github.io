@@ -1,5 +1,6 @@
 ---
 title: Aerodynamic Modelling
+author: AngusP
 image: aero.jpg
 layout: post
 ---
