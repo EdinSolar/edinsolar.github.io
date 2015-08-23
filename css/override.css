@@ -477,10 +477,11 @@ h4.jumbo {
     background-repeat: no-repeat;
     display: block;
     width: 100%;
-    padding-right: 100%;
+    padding-right: 101%;
     min-height: 250px;
     height: 300px;
     height: 40vh;
+    overflow: hidden;
 }
 
 
