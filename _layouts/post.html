@@ -2,24 +2,58 @@
 layout: condensed
 ---
 
-<div class="container-fluid container-xl">
-  <div class="row">
-    <div class="col-sm-4 col-md-5 no-gutter">
-      <img src="{{ site.baseurl }}/img/{{ page.image }}" class="img-responsive">
-    </div>
 
-    <div class="col-sm-8 col-md-7">
-      <div class="padder">
-        <a href="{{ page.url | prepend: site.baseurl }}">
-          <h1>{{ page.title }}</h1>
-        </a>
-        <br>
-        <span class="colour-glass">Published {{ page.date | date: "%b %-d, %Y" }}
-          by {{ page.author | strip_html | truncatewords:5 }}</span>
-        <br><br>
-        {{ content }}
+<div class="container-fluid container-skinny">
+  <img src="{{ site.baseurl }}/img/{{ page.image }}" 
+       style="background-image: url('{{ site.baseurl }}/img/post/{{ page.image }}');"
+       class="post-banner">
+</div>
+
+<div class=" colour-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="padder">
+          
+          <h1 class="jumbo">{{ page.title }}</h1>
+          <br>
+          
+          {% if page.authimg %}
+          <img class="profile" src="{{ site.baseurl }}/img/auth/{{ page.authimg }}.jpg">
+          {% endif %}
+          
+          <span class="subtle">Published {{ page.date | date: "%b %-d, %Y" }}
+            by {{ page.author | strip_html | truncatewords:5 }}</span>
+
+          
+          <br><br>
+          {{ content }}
+
+          <br><br>
+          <span class="subtle"><a href="{{ site.baseurl }}/news">&laquo; Back to news</a></span>
+         
+        </div>
+      </div>
+
+
+      <div class="col-md-3">
+        <div class="padder">
+          <h4>MOST RECENT</h4>
+
+          {% for post in site.posts limit:8 %}
+
+          <p>&hellip;</p>
+          <p>
+            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | xmlescape }}</a>
+            <br>
+            <span class="subtle">{{ post.date | date: "%b %-d, %Y" }}
+              &#65074; {{ post.author | strip_html | truncatewords:5 }}</span>
+          </p>
+          
+          {% endfor %}
+          
+        </div>
       </div>
     </div>
-
-  </div>
+  </div><!-- /.container -->
 </div>

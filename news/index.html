@@ -29,7 +29,7 @@ title: News
 	    <label for="mce-EMAIL" class="sr-only">Email Address for Newsletter signup</label>
             <div class="mc-field-group input-group">
               <span class="input-group-btn">
-              <a href="{{ site.baseurl }}/feed.xml" class="btn btn-warning">
+              <a href="{{ site.baseurl }}/feed.xml" class="btn btn-warning" title="Subscribe to RSS Feed instead">
                 <i class="fa fa-rss fa-fw"></i></a>
               </span>
 
@@ -43,7 +43,7 @@ title: News
               </div>
               
               <span class="input-group-btn">
-                <button type="submit" value="Subscribe" name="subscribe" 
+                <button type="submit" value="Subscribe" name="subscribe" title="Subscribe to our list"
                         id="mc-embedded-subscribe" class="btn btn-info">
                   <i class="fa fa-check fa-fw"></i>
                 </button>
@@ -69,12 +69,19 @@ title: News
         
         <div class="grid-block">
           <div class="card">
-            <img src="{{ site.baseurl }}/img/{{ post.image }}" class="img-responsive">
+            <img src="{{ site.baseurl }}/img/post/{{ post.image }}" class="img-responsive">
             <div class="padder">
               <a href="{{ post.url | prepend: site.baseurl }}"><h3>{{ post.title | xmlescape }}</h3></a>
-              <p class="subtle">{{ post.author | strip_html | truncatewords:5 }}
+
+              {% if post.authimg %}
+              <img src="{{ site.baseurl }}/img/auth/{{ post.authimg }}.jpg"
+                   class="tiny profile">
+              {% endif %}
+              <p class="subtle" style="padding: 6px 0px;">{{ post.author | strip_html | truncatewords:5 }}
                 &nbsp;&#65074;&nbsp; {{ post.date | date: "%b %-d, %Y" }}</p>
+
               <p>{{ post.content | strip_html | truncatewords:75 }}</p>
+
               <a href="{{ post.url | prepend: site.baseurl }}" 
                  class="btn btn-sm btn-info card-follow">Read more &raquo;</a>
             </div>

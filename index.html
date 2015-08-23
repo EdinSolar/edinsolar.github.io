@@ -120,11 +120,21 @@ title: Home
 
       <div class="col-sm-6 col-md-4">
         <div class="card">
-          <img src="{{ site.baseurl }}/img/{{ post.image }}" class="img-responsive">
+          <img src="{{ site.baseurl }}/img/post/{{ post.image }}" class="img-responsive">
           <div class="padder">
             <a href="{{ post.url | prepend: site.baseurl }}"><h3>{{ post.title | xmlescape }}</h3></a>
+
+            {% if post.authimg %}
+            <img src="{{ site.baseurl }}/img/auth/{{ post.authimg }}.jpg"
+                 class="tiny profile">
+            {% endif %}
+            <p class="subtle" style="padding: 6px 0px;">{{ post.author | strip_html | truncatewords:5 }}
+              &nbsp;&#65074;&nbsp; {{ post.date | date: "%b %-d, %Y" }}</p>
+            
             <p>{{ post.content | strip_html | truncatewords:50 }}</p>
-            <a href="{{ post.url | prepend: site.baseurl }}" class="btn btn-sm btn-info card-follow">Read more &raquo;</a>
+
+            <a href="{{ post.url | prepend: site.baseurl }}" 
+               class="btn btn-sm btn-info card-follow">Read more &raquo;</a>
           </div>
         </div>
       </div>
@@ -152,7 +162,7 @@ title: Home
       <div class="col-sm-3">
         <div class="padder">
           <h4><i class="fa fa-facebook-official"></i></h4>
-          <h4>Facebook</h4>
+          <h4><a href="https://www.facebook.com/edinsolarracing" target=_blank>Facebook</a></h4>
           
           <div class="fb-like" 
                data-href="https://www.facebook.com/edinsolarracing" 
@@ -167,7 +177,7 @@ title: Home
       <div class="col-sm-3">
         <div class="padder">
           <h4><i class="fa fa-twitter"></i></h4>
-          <h4>Twitter</h4>
+          <h4><a href="https://twitter.com/Edinsolar" target=_blank>Twitter</a></h4>
           
           <a href="https://twitter.com/Edinsolar" class="twitter-follow-button" data-show-count="false">Follow @Edinsolar</a>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
@@ -178,7 +188,7 @@ title: Home
       <div class="col-sm-3">
         <div class="padder">
           <h4><i class="fa fa-youtube-play"></i></h4>
-          <h4>YouTube</h4>
+          <h4><a href="https://www.youtube.com/channel/UCs_ymuBlljUEqWanrW-6Lug" target=_blank>YouTube</a></h4>
           
           <script src="https://apis.google.com/js/platform.js"></script>
           

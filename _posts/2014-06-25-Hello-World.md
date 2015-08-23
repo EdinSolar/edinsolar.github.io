@@ -1,9 +1,11 @@
 ---
 title: Hello World
 author: Simon & Erin
+authimg: simerin
 image: team.jpg
 layout: post
 ---
+
 
 Edinsolar, the University of Edinburgh's solar car team has recently formed. We’re a group of undergraduate students studying a mix of Business, Computer Science, Engineering and more. We’re planning to enter the 2017 World Solar Challenge, an event that runs once every two years in Australia. Teams from around the world race across the outback not just for fun but to improve and expand our current engineering capabilities for self-contained sustainable transport.
 

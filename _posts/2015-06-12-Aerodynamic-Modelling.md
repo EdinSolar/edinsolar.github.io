@@ -1,7 +1,8 @@
 ---
 title: Aerodynamic Modelling
 author: AngusP
-image: aero.jpg
+authimg: angusp
+image: aero-opt.jpg
 layout: post
 ---
 
