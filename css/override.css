@@ -222,6 +222,43 @@ a:focus {
 }
 
 
+
+.columnify {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+}
+
+@media(max-width: 768px){
+    .columnify {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+        -webkit-column-gap: 20px;
+        -moz-column-gap: 20px;
+        column-gap: 20px;
+    }
+}
+
+@media(max-width: 468px){
+    .columnify {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+        -webkit-column-gap: 0px;
+        -moz-column-gap: 0px;
+        column-gap: 0px;
+    }
+}
+
+
+
+
+
+
 /* Keep full width stuff sensible */
 @media(min-width: 1200px){
     .container-lg {
@@ -270,6 +307,13 @@ footer {
     padding: 5% 0;
 }
 
+@media( min-width: 480px ){
+    .header-logo {
+        width: 60%;
+        max-width: 60%;
+    }
+}
+
 @media( min-width: 768px ){
     .header-logo {
         width: 60%;
@@ -291,12 +335,12 @@ footer {
     background: url('../img/road-graded1-opt.jpg');
     background-position: center center;
     background-size: cover;
-    height: 100%;
-    min-height: 150vw;
+    height: 90%;
+    min-height: 80vw;
 }
 
     @media( min-width: 768px ){
-        .hero { min-height: 70vw; }
+        .hero { min-height: 70vw; height: 100%; }
     }
 
     @media( min-width: 992px ){
@@ -304,7 +348,7 @@ footer {
     }
 
     @media( min-width: 1380px ){
-        .hero { min-height: 50vw; }
+        .hero { min-height: 40vw; }
     }
 
     #carousel-hero {
@@ -415,6 +459,7 @@ h3.jumbo {
 }
 h4.jumbo {
     font-size: 18px;
+    font-weight: normal;
 }
 
 .jumbo a:hover,
@@ -485,7 +530,19 @@ h4.jumbo {
     padding: 10px 30px;
 }
 
-
+.padderr {
+    padding: 5px;
+}
+@media( min-width: 480px ){
+    .padderr{
+        padding: 20px;
+    }
+}
+@media( min-width: 768px ){
+    .padderr{
+        padding: 30px;
+    }
+}
 
 .post-banner {
     background-position: center center;
